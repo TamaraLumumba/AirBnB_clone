@@ -31,15 +31,25 @@ This project represents a comprehensive journey into web development and program
 ## Requirments
 Python Scripts
 Allowed editors: vi, vim, emacs
+
 All files were interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
+
 All files should end with a new line
+
 The first line of files should be exactly #!/usr/bin/python3
+
 Your code should use the pycodestyle (version 2.8.*)
+
 All files must be executable
+
 The length of files are tested using wc
+
 All modules should have a documentation (python3 -c 'print(__import__("my_module").__doc__)')
+
 All classes should have a documentation (python3 -c 'print(__import__("my_module").MyClass.__doc__)')
+
 All functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
+
 All files should use * [pycodestyle](https://pypi.org/project/pycodestyle/) to all files.
 
 ## Console
@@ -91,17 +101,29 @@ $
 ```
 ## Tests
 Python Unit Tests
+
 Allowed editors: vi, vim, emacs
+
 All files should end with a new line
+
 All test files should be inside a folder tests
+
 You have to use the unittest module
+
 All test files should be python files (extension: .py)
+
 All test files and folders should start by test_
+
 File organization in the tests folder should be the same as your project
+
 All tests should be executed by using this command: python3 -m unittest discover tests
+
 You can also test file by file by using this command: python3 -m unittest tests/test_models/test_base_model.py
+
 All modules should have a documentation (python3 -c 'print(__import__("my_module").__doc__)')
+
 All classes should have a documentation (python3 -c 'print(__import__("my_module").MyClass.__doc__)')
+
 All functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
 
 ## Authors
