@@ -15,7 +15,7 @@ class BaseModel:
             *args : tuple representation of arguments. Unused.
             **kwargs : Key/value pairs of arguments.
         """
-        timef = "%d-%m-%yT%H:%M:%S.%f"
+        timef = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
