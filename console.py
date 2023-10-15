@@ -15,7 +15,7 @@ from models.place import Place
 class HBNBCommand (cmd.Cmd):
     """Defines command interpreter"""
 
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
 
     def my_errors(self, line, num_of_args):
         """Displays error messages to user
@@ -175,7 +175,6 @@ class HBNBCommand (cmd.Cmd):
                 return
         setattr(all_objs[key], my_key, my_value)
         storage.save()
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
