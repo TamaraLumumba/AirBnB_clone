@@ -12,7 +12,7 @@ from models.user import User
 from models.place import Place
 
 
-class HBNBCommand (cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """Defines command interpreter"""
 
     prompt = "(hbnb) "
