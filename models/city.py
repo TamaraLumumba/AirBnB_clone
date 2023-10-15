@@ -1,6 +1,7 @@
-#!/usr/bin/python3 
+#!/usr/bin/python3
 """Describes the city class,derived from the basemodel class"""
 from models.base_model import BaseModel
+
 
 class City(BaseModel):
     """This class represents a city
