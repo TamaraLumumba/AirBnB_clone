@@ -11,9 +11,9 @@ from models.review import Review
 from models.user import User
 from models.place import Place
 
+
 class HBNBCommand (cmd.Cmd):
     """Defines command interpreter"""
-
 
     prompt = "(hbnb) "
 
@@ -25,13 +25,12 @@ class HBNBCommand (cmd.Cmd):
             num_of_args(int): number of input arguments
         """
         classes = {"BaseModel",
-               "User",
-               "State",
-               "City",
-               "Place",
-               "Amenity",
-               "Review"
-            }
+                   "User",
+                   "State",
+                   "City",
+                   "Place",
+                   "Amenity",
+                   "Review"}
 
         msg = ["** class name missing **",
                "** class doesn't exist **",
@@ -39,7 +38,6 @@ class HBNBCommand (cmd.Cmd):
                "** no instance found **",
                "** attribute name missing **",
                "** value missing **"]
-        
         if not line:
             print(msg[0])
             return True
@@ -52,7 +50,7 @@ class HBNBCommand (cmd.Cmd):
         if num_of_args >= 2 and len(args) < 2:
             print(msg[2])
             return True
-        all_objs  = storage.all()
+        all_objs = storage.all()
 
         for i in range(len(args)):
             if args[i][0] == '"':
@@ -83,15 +81,16 @@ class HBNBCommand (cmd.Cmd):
         """"Command to quit th program\n"""
         return True
 
-    def do_create(self,line):
+    def do_create(self, line):
         """Command that creates a new instance of the BaseModel"""
-        if (self.my_errors(line, 1) == True):
+        if (self.my_errors(line, 1) is True):
             return
         args = line.split(" ")
         obj = eval(args[0])()
         obj.save()
 
         print(obj.id)
+
     def do_show(self, line):
         """Prints a string representation of an instance.
 
@@ -100,7 +99,7 @@ class HBNBCommand (cmd.Cmd):
             Example: 'show User 7'
 
         """
-        if (self.my_errors(line, 2) == True):
+        if (self.my_errors(line, 2) is True):
             return
         args = line.split()
         all_objs = storage.all()
@@ -117,7 +116,7 @@ class HBNBCommand (cmd.Cmd):
             example: 'destroy User 10'
 
         """
-        if (self.my_errors(line, 2) == True):
+        if (self.my_errors(line, 2) is True):
             return
         args = line.split()
         all_objs = storage.all()
@@ -130,15 +129,15 @@ class HBNBCommand (cmd.Cmd):
     def do_all(self, line):
         """Shows all instances, or instances of a certain class
 
-        Args: 
-            line : args to enter with command
+        Args:
+        line : args to enter with command
         """
         all_objs = storage.all()
         if not line:
             print([str(x) for x in all_objs.values()])
             return
         args = line.split()
-        if (self.my_errors(line, 1) == True):
+        if (self.my_errors(line, 1) is True):
             return
         print([str(v) for v in all_objs.values()
                if v.__class__.__name__ == args[0]])
@@ -150,7 +149,7 @@ class HBNBCommand (cmd.Cmd):
         Args:
             line : args that receive the commands
         """
-        if (self.my_errors(line, 4) == True):
+        if (self.my_errors(line, 4) is True):
             return
         args = line.split()
         all_objs = storage.all()
@@ -176,7 +175,6 @@ class HBNBCommand (cmd.Cmd):
                 return
         setattr(all_objs[key], my_key, my_value)
         storage.save()
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
