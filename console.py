@@ -1,7 +1,10 @@
 #!/usr/bin/python3
+"""Defines CLI to query AirBnB clone project"""
+
 import cmd
 import re
 import json
+import models
 from models import storage
 from models.base_model import BaseModel
 from models.state import State
