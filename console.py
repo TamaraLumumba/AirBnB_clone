@@ -176,5 +176,6 @@ class HBNBCommand (cmd.Cmd):
         setattr(all_objs[key], my_key, my_value)
         storage.save()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     HBNBCommand().cmdloop()
