@@ -1,7 +1,10 @@
 #!/usr/bin/python3
+"""Defines CLI to query AirBnB clone project"""
+
 import cmd
 import re
 import json
+import models
 from models import storage
 from models.base_model import BaseModel
 from models.state import State
@@ -12,7 +15,7 @@ from models.user import User
 from models.place import Place
 
 
-class HBNBCommand (cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """Defines command interpreter"""
 
     prompt = "(hbnb) "
@@ -74,11 +77,12 @@ class HBNBCommand (cmd.Cmd):
         pass
 
     def do_quit(self, arg):
-        """Command to exit the program\n"""
+        """Quit command to exit the program"""
         return True
 
     def do_EOF(self, arg):
-        """"Command to quit th program\n"""
+        """"EOF signal to exit the program."""
+        print("")
         return True
 
     def do_create(self, line):
@@ -175,6 +179,17 @@ class HBNBCommand (cmd.Cmd):
                 return
         setattr(all_objs[key], my_key, my_value)
         storage.save()
+
+    def do_count(self, arg):
+        """
+        Method counts instances of a certain class
+        """
+        count = 0
+        for obj in storage.all().values():
+            if obj.__class__.__name__ == arg:
+                count += 1
+        print(count)
+
 
 if __name__ == '__main__':
 HBNBCommand().cmdloop()
